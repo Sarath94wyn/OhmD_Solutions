@@ -33,10 +33,21 @@ import ManageAuditsPage from './pages/admin/ManageAuditsPage';
 
 // Scroll Restoration
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      const elementId = hash.replace('#', '');
+      const element = document.getElementById(elementId);
+      if (element) {
+        // Small delay to ensure the page has finished mounting and layed out
+        const timer = setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 150);
+        return () => clearTimeout(timer);
+      }
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 

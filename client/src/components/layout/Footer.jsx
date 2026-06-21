@@ -102,9 +102,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {SERVICES.map((s) => (
                 <li key={s.id}>
-                  <span className="text-text-muted hover:text-primary text-sm cursor-pointer transition-colors">
+                  <Link
+                    to={`/#${s.id}`}
+                    className="text-text-muted hover:text-primary text-sm transition-colors block"
+                  >
                     {s.title}
-                  </span>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -116,11 +119,11 @@ export default function Footer() {
             <ul className="space-y-4 mb-8">
               <li className="flex items-start gap-3 text-sm text-text-muted">
                 <Mail className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                hello@ohmdsolutions.com
+                ohmdesignshere@gmail.com
               </li>
               <li className="flex items-start gap-3 text-sm text-text-muted">
                 <Phone className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                +91 98765 43210
+                +91 9946643455
               </li>
               <li className="flex items-start gap-3 text-sm text-text-muted">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
@@ -161,8 +164,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-text-muted text-sm flex items-center gap-1">
-            © 2026 OhmD Solutions. All rights reserved. Made with
-            <Heart className="w-3 h-3 text-red-500 fill-red-500" />
+            © 2026 OhmD Solutions. All rights reserved. 
           </p>
           <div className="flex gap-6 text-sm text-text-muted">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

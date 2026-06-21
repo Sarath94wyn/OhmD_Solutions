@@ -30,7 +30,7 @@ export default function ServicesSection() {
 
             return (
               <ScrollReveal key={service.id} delay={i * 0.1}>
-                <Card className="p-6 h-full group">
+                <Card id={service.id} className="p-6 h-full group">
                   {/* Icon */}
                   <motion.div
                     whileHover={{ rotate: 5, scale: 1.05 }}
